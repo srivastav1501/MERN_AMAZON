@@ -19,7 +19,7 @@ app.use(cookieParser(""))
 app.use(router);
 
 
-const port = process.env.POST || 8005;
+const port = process.env.PORT || 8005;
 
 app.listen(port, ()=>{
     console.log(`Running on ${port}`);
