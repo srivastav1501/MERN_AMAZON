@@ -143,7 +143,6 @@ router.get('/cartdetails',authenticate,async(req,res)=>{
           console.log('router cartdetail error-------',error.message);
     }
 })
-module.exports = router;
 
 // GET VALID USER DETAIL
 
