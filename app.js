@@ -13,7 +13,7 @@ const router = require('./routes/router')
 
 const corsOptions ={
     origin:'*', 
-    credentials:true,            //access-control-allow-credentials:true
+    credentials:true,          
     optionSuccessStatus:200,
  }
 
