@@ -4,16 +4,16 @@ const app = express();
 // const mongoose = require('mongoose')
 require('./db/conn');
 const cookieParser = require("cookie-parser")
+const cors = require('cors')
 
 
 const Products = require('./modals/productsSchema')
 const DefaultData = require('./defaultdata.js');
-const cors = require('cors')
 const router = require('./routes/router')
 
 
 
-app.use(cors({credential: true, origin: `http://localhost:${process.env.PORT}`}));
+app.use(cors());
 app.use(express.json()); 
 app.use(cookieParser(""))
 app.use(router);
