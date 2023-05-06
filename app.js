@@ -11,16 +11,10 @@ const Products = require('./modals/productsSchema')
 const DefaultData = require('./defaultdata.js');
 const router = require('./routes/router')
 
-app.use(cors());
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://amazon-frontend-a3y5.onrender.com");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-    next();
-  });
+app.use(cors({
+  origin : "https://amazon-frontend-a3y5.onrender.com",
+  credentials: true
+}));
 
 app.use(express.json()); 
 app.use(cookieParser(""))
