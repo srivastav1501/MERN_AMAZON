@@ -11,6 +11,7 @@ const Products = require('./modals/productsSchema')
 const DefaultData = require('./defaultdata.js');
 const router = require('./routes/router')
 
+app.use(cors());
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "https://amazon-frontend-a3y5.onrender.com");
     res.header(
@@ -21,7 +22,6 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.use(cors());
 app.use(express.json()); 
 app.use(cookieParser(""))
 app.use(router);
