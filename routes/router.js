@@ -137,7 +137,7 @@ router.post('/addcart/:id',authenticate,async(req,res)=>{
 
 router.get('/cartdetails',authenticate,async(req,res)=>{
     try{
-          const user = await USER.findOne({_id:req.userId});
+          const user = await USER.findOne({_id : req.userId});
           res.status(201).json(user);
     }catch(error){
           console.log('router cartdetail error-------',error.message);
