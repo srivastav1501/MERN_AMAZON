@@ -133,7 +133,7 @@ router.post('/addcart/:id',authenticate,async(req,res)=>{
     }
 })
 
-// GET CART DETAILS
+// GET CART DETAILS;
 
 router.get('/cartdetails',authenticate,async(req,res)=>{
     try{
