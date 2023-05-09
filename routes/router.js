@@ -86,17 +86,19 @@ router.post('/login', async (req, res) => {
             // TOKEN GENERATION
 
             const token = await userLogin.generateAuthtoken();
-            console.log(token)
-
-            // GENERATE COOKIE
-
-            res.cookie('Amazonweb',token,{
-                expires:new Date(Date.now() + 900000),
-                httpOnly:true
-            })
+          
             if (!isMatch) {
                 res.status(400).json({ resp: " notdone" })
             } else {
+                console.log(token)
+
+                // GENERATE COOKIE
+    
+                res.cookie('Amazonweb',token,{
+                    expires:new Date(Date.now() + 900000),
+                    httpOnly:true
+                })
+                
                 res.status(201).json(userLogin)
             }
         }else{
