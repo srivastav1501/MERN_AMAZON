@@ -4,7 +4,8 @@ const app = express();
 // const mongoose = require('mongoose')
 require('./db/conn');
 const cookieParser = require("cookie-parser")
-const cors = require('cors')
+const cors = require('cors');
+const path = require('path')
 
 
 const Products = require('./modals/productsSchema')
@@ -20,6 +21,11 @@ app.use(express.json());
 app.use(cookieParser(""))
 app.use(router);
 
+app.use(express.static(path.join(__dirname, './client/build')));
+
+app.get('*', function(req,res){
+  res.sendfile(path.join(__dirname, './client/build/index.html'))
+});
 
 const port = process.env.PORT || 8005;
 
